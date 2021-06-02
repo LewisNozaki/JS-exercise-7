@@ -43,3 +43,12 @@ function isValidWalk(walk) {
   
   return dt === 10 && dx === 0 && dy === 0;
 };
+
+// Solution 3
+function isValidWalk(walk) {
+  const count = val => {
+    return walk.filter(a =>  a === val).length;
+  };
+
+  return walk.length === 10 && count('n') === count('s') && count('w') === count('e');
+};
